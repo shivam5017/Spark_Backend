@@ -38,6 +38,7 @@ async function AddPost(req, res) {
             image: req.file ? req.file.filename : null, // Assuming image field is 'image'
             link:req.body.link
           };
+         
         
           const post = new PostModel(payload);
           await post.save();

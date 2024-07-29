@@ -5,10 +5,13 @@ const cors = require("cors");
 const PostRouter =require("./Routes/post.routes")
 const path= require("path");
 require("dotenv").config();
+const bodyParser = require('body-parser');
 
 app.use(cors())
 
 app.use(express.json());
+app.use(bodyParser.json());
+
 
 app.use("/post",PostRouter)
 app.use('/uploads',express.static('uploads'));
