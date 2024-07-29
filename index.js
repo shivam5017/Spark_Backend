@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 
 app.use("/post",PostRouter)
-app.use('/uploads',express.static('uploads'));
+app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 app.get("*", (req, res) => {
     res.status(404).json("not found")
 })
